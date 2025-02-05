@@ -1,5 +1,6 @@
 package com.example.wordleproject
 import FourLetterWordList
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -10,6 +11,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.transition.Visibility
 
 /**
  * Parameters / Fields:
@@ -55,7 +57,7 @@ class MainActivity : AppCompatActivity() {
     var counter : Int = 0
     var validationString : String=""
     var userInput : String= ""
-    var validatedInput : String = ""
+    var winner : Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,18 +77,21 @@ class MainActivity : AppCompatActivity() {
         val guessCheck1 = findViewById<TextView>(R.id.guess1Check)
         val guessCheck2 = findViewById<TextView>(R.id.guess2Check)
         val guessCheck3 = findViewById<TextView>(R.id.guess3Check)
+        textView.text = fourLetterWord
+        textView.visibility = View.GONE
 
-        //validation
-        textView.text = fourLetterWord.toString()
+
+
         submitButton.setOnClickListener{
             userInput = guessInput.text.toString()
             if (userInput.length < 4){
-                Toast.makeText(it.context,"Invalid In",Toast.LENGTH_SHORT).show()
+                Toast.makeText(it.context,"Invalid Input Please Try Again",Toast.LENGTH_SHORT).show()
             }
             else{
                 counter++;
                 //Submit the current 4 letter 4 and check for the guess
                 validationString = checkGuess(userInput.toString().uppercase(),fourLetterWord)
+                winner = checkWin(validationString)
                 if (counter == 1){
                     guess1.text = userInput.uppercase()
                     //Checking for the text
@@ -102,15 +107,25 @@ class MainActivity : AppCompatActivity() {
                     guessCheck3.text = validationString
                     submitButton.visibility = View.INVISIBLE
                     restartButton.visibility = View.VISIBLE
+                    textView.text = fourLetterWord.toString()
+                    textView.setTextColor(Color.GREEN)
                 }
                 //reseting the input stream
                 guessInput.setText(null)
-                if(checkWin(validationString)){
-
+                if(winner){
                     Toast.makeText(it.context,"YOU WON",Toast.LENGTH_SHORT).show()
                     submitButton.visibility = View.INVISIBLE
                     restartButton.visibility = View.VISIBLE
                     restartButton.setText("START A NEW GAME")
+                    textView.setTextColor(Color.GREEN)
+                    textView.visibility = View.VISIBLE
+                    //validation
+                }
+                else if(counter == 3 &&  !winner){
+                    textView.setTextColor(Color.RED)
+                    textView.visibility = View.VISIBLE
+                    Toast.makeText(it.context,"YOU LOST! Restart the game to try again",Toast.LENGTH_SHORT).show()
+
                 }
             }
         }
@@ -119,7 +134,10 @@ class MainActivity : AppCompatActivity() {
             counter = 0
             Toast.makeText(it.context,"Generating new Word", Toast.LENGTH_SHORT).show()
             fourLetterWord = FourLetterWordList.getRandomFourLetterWord()
+            textView.visibility = View.GONE;
             textView.text = fourLetterWord
+
+
             submitButton.visibility = View.VISIBLE
             restartButton.visibility = View.INVISIBLE
             //clear all of the fields
