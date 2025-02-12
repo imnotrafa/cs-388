@@ -10,14 +10,14 @@ Time spent: **4** hours spent in total
 
 The following **required** functionality is completed:
 
-- [x ] **User can add an item to their wishlist**
-- [x ] **User can see their list of items based on previously inputted items**
+- [x] **User can add an item to their wishlist**
+- [x] **User can see their list of items based on previously inputted items**
 
 The following **optional** features are implemented:
 
 - [ ] Wishlist app is 🎨 **customized** 🎨
 - [ ] User can delete an item by long pressing on the item
-- [x ] User can open an item's URL by clicking on the item
+- [x] User can open an item's URL by clicking on the item
 
 The following **additional** features are implemented:
 
@@ -27,7 +27,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='[http://i.imgur.com/link/to/your/gif/file.gif](https://github.com/imnotrafa/cs-388/blob/Project2/WishList/demoProjectVideo.gif)' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  
