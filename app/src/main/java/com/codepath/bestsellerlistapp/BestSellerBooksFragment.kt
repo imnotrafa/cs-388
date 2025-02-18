@@ -1,6 +1,7 @@
 package com.codepath.bestsellerlistapp
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,12 +10,20 @@ import androidx.core.widget.ContentLoadingProgressBar
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.codepath.asynchttpclient.AsyncHttpClient
+import com.codepath.asynchttpclient.RequestParams
+import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
+
 import com.codepath.bestsellerlistapp.R
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import okhttp3.Headers
+import org.json.JSONObject
 
 // --------------------------------//
 // CHANGE THIS TO BE YOUR API KEY  //
 // --------------------------------//
-private const val API_KEY = "<YOUR-API-KEY-HERE>"
+private const val API_KEY = "K0CfoRRVUXj2USqXKdacAFAZtlWT7oJ8"
 
 /*
  * The class for the only fragment in the app, which contains the progress bar,
@@ -46,10 +55,15 @@ class BestSellerBooksFragment : Fragment(), OnListFragmentInteractionListener {
         progressBar.show()
 
         // Create and set up an AsyncHTTPClient() here
+        val async_client = AsyncHttpClient()
+        val params = RequestParams()
 
+        params["api-key"] = API_KEY
         // Using the client, perform the HTTP request
-
-        /* Uncomment me once you complete the above sections!
+        async_client[
+        "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json",
+        params,
+        object : JsonHttpResponseHandler()
         {
             /*
              * The onSuccess function gets called when
@@ -65,7 +79,17 @@ class BestSellerBooksFragment : Fragment(), OnListFragmentInteractionListener {
 
                 //TODO - Parse JSON into Models
 
-                val models : List<BestSellerBook> = null // Fix me!
+                val resultsJSON : JSONObject = json.jsonObject.get("results") as JSONObject
+                val BooksRawJson : String = resultsJSON.get("books").toString()
+                println(BooksRawJson)
+                val gson = Gson()
+
+                println(BooksRawJson[0])
+                //This is getting each type of what we have defiend
+                val arrayBookType = object : TypeToken<List<BestSellerBook>>() {}.type
+                //This is parsing the dtaa and amtching it with the given values
+                val models :List<BestSellerBook> = gson.fromJson(BooksRawJson,arrayBookType)
+
                 recyclerView.adapter = BestSellerBooksRecyclerViewAdapter(models, this@BestSellerBooksFragment)
 
                 // Look for this in Logcat:
@@ -90,8 +114,10 @@ class BestSellerBooksFragment : Fragment(), OnListFragmentInteractionListener {
                     Log.e("BestSellerBooksFragment", errorResponse)
                 }
             }
-        }]
-        */
+        }
+        ]
+
+
 
     }
 
