@@ -41,11 +41,10 @@ GIF created with ...
 
 ## Notes
 
-Describe any challenges encountered while building the app.
-
+The main challenge was to properly set up the example code. Everything else was very straight forward.
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2025 Rafael Abreu
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
