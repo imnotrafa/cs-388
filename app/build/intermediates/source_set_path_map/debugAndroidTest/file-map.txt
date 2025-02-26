@@ -1,0 +1,4 @@
+com.codepath.articlesearch.test.app-androidTest-0 /Users/rafaelabreu/Desktop/spring2025/android-dev/Lab4/CS388_Lab4/and102-lab4-starter/app/build/generated/res/resValues/androidTest/debug
+com.codepath.articlesearch.test.app-mergeDebugAndroidTestResources-1 /Users/rafaelabreu/Desktop/spring2025/android-dev/Lab4/CS388_Lab4/and102-lab4-starter/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.codepath.articlesearch.test.app-mergeDebugAndroidTestResources-2 /Users/rafaelabreu/Desktop/spring2025/android-dev/Lab4/CS388_Lab4/and102-lab4-starter/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.codepath.articlesearch.test.app-merged_res-3 /Users/rafaelabreu/Desktop/spring2025/android-dev/Lab4/CS388_Lab4/and102-lab4-starter/app/build/intermediates/merged_res/debugAndroidTest

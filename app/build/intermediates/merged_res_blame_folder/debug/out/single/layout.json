@@ -1,15 +1,11 @@
 [
     {
-        "merged": "/Users/rafaelabreu/.gradle/daemon/8.9/com.codepath.articlesearch.app-mergeDebugResources-27:/layout/item_article.xml",
-        "source": "/Users/rafaelabreu/.gradle/daemon/8.9/com.codepath.articlesearch.app-main-30:/layout/item_article.xml"
+        "merged": "com.codepath.articlesearch.app-mergeDebugResources-27:/layout/item_article.xml",
+        "source": "com.codepath.articlesearch.app-main-30:/layout/item_article.xml"
     },
     {
-        "merged": "/Users/rafaelabreu/.gradle/daemon/8.9/com.codepath.articlesearch.app-mergeDebugResources-27:/layout/activity_detail.xml",
-        "source": "/Users/rafaelabreu/.gradle/daemon/8.9/com.codepath.articlesearch.app-main-30:/layout/activity_detail.xml"
-    },
-    {
-        "merged": "/Users/rafaelabreu/.gradle/daemon/8.9/com.codepath.articlesearch.app-mergeDebugResources-27:/layout/activity_main.xml",
-        "source": "/Users/rafaelabreu/.gradle/daemon/8.9/com.codepath.articlesearch.app-main-30:/layout/activity_main.xml"
+        "merged": "com.codepath.articlesearch.app-mergeDebugResources-27:/layout/activity_main.xml",
+        "source": "com.codepath.articlesearch.app-main-30:/layout/activity_main.xml"
     },
     {
         "merged": "com.codepath.articlesearch.app-mergeDebugResources-27:/layout/activity_detail.xml",

@@ -14,6 +14,8 @@ import kotlinx.serialization.json.Json
 import okhttp3.Headers
 import org.json.JSONException
 
+
+private const val API_KEY = BuildConfig.API_KEY
 private const val ARTICLE_SEARCH_URL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=${API_KEY}"
 private const val TAG = "MainActivity"
 
