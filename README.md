@@ -1,10 +1,10 @@
 # Android Project 3 - *Name of App Here*
 
-Submitted by: **Your Name Here**
+Submitted by: **Rafael Abreu**
 
-**Name of your app** is a movie browsing app that allows users to browse movies currently playing in theaters.
+*Projec4** is a movie browsing app that allows users to browse movies currently playing in theaters.
 
-Time spent: **X** hours spent in total
+Time spent: **6** hours spent in total
 
 ## Required Features
 
@@ -30,7 +30,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='project3_walktrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='cursorful-video-1740711358748.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  
